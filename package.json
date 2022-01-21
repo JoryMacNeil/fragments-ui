@@ -1,23 +1,23 @@
 {
   "name": "fragments-ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Fragments UI testing web app",
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel": "latest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoryMacNeil/fragments-ui.git"
+    "url": "git+https://github.com/jorymacneil/fragments-ui.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JoryMacNeil/fragments-ui/issues"
-  },
-  "homepage": "https://github.com/JoryMacNeil/fragments-ui#readme",
-  "devDependencies": {
-    "parcel": "^2.2.1"
-  }
+  "author": "Jory Macneil <jmacneil7@myseneca.ca>",
+  "license": "UNLICENSED"
 }
