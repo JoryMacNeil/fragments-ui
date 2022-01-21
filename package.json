@@ -19,5 +19,8 @@
     "url": "git+https://github.com/jorymacneil/fragments-ui.git"
   },
   "author": "Jory Macneil <jmacneil7@myseneca.ca>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "aws-amplify": "^4.3.12"
+  }
 }
