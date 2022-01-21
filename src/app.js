@@ -10,6 +10,7 @@ async function init() {
 
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
+    location.replace("fragments-jorymacneil.auth.us-east-1.amazoncognito.com");
     // Sign-in via the Amazon Cognito Hosted UI (requires redirects), see:
     // https://docs.amplify.aws/lib/auth/advanced/q/platform/js/#identity-pool-federation
     Auth.federatedSignIn();
@@ -17,7 +18,13 @@ async function init() {
   logoutBtn.onclick = () => {
     // Sign-out of the Amazon Cognito Hosted UI (requires redirects), see:
     // https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/#sign-out
-    Auth.signOut();
+    try {
+        Auth.signOut();
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+
+   
   };
 
   // See if we're signed in (i.e., we'll have a `user` object)
