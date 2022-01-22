@@ -1,13 +1,17 @@
 // src/app.js
 
 import { Auth, getUser } from './auth';
+import { getUserFragments } from './api';
 
 async function init() {
   // Get our UI elements
+  
   const userSection = document.querySelector('#user');
   const loginBtn = document.querySelector('#login');
   const logoutBtn = document.querySelector('#logout');
-
+  
+  
+  
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
     location.replace("fragments-jorymacneil.auth.us-east-1.amazoncognito.com");
@@ -23,17 +27,11 @@ async function init() {
     } catch (error) {
         console.log('error signing out: ', error);
     }
-
-   
+    
   };
 
   // See if we're signed in (i.e., we'll have a `user` object)
   const user = await getUser();
-  if (!user) {
-    // Disable the Logout button
-    logoutBtn.disabled = true;
-    return;
-  }
 
   // Log the user info for debugging purposes
   console.log({ user });
@@ -46,6 +44,8 @@ async function init() {
 
   // Disable the Login button
   loginBtn.disabled = true;
+
+  getUserFragments(user);
 }
 
 // Wait for the DOM to be ready, then start the app
