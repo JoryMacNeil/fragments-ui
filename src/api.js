@@ -16,6 +16,7 @@ export async function getUserFragments(user) {
         // Include the user's ID Token in the request so we're authorized
         Authorization: `Bearer ${user.idToken}`,
       },
+    
     });
     if (!res.ok) {
       throw new Error(`${res.status} ${res.statusText}`);
